@@ -1,0 +1,200 @@
+package com.albara.foodis.presentation.home_screen.components
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.DpOffset
+import androidx.compose.ui.unit.dp
+import com.albara.foodis.R
+import com.albara.foodis.buttonaddtocart.ButtonAddToCart
+import com.albara.foodis.buttonaddtocart.Discount
+import com.albara.foodis.counter.Counter
+import com.albara.foodis.domain.modal.Product
+import com.albara.foodis.itemcard.InCart
+import com.albara.foodis.itemcard.ItemCard
+import com.albara.foodis.itemtag.Itemtag
+import com.albara.foodis.itemtag.Type
+import com.albara.foodis.presentation.home_screen.HomeScreenEvent
+import com.albara.foodis.presentation.ui.theme.Orange
+
+@Composable
+fun ItemCard(
+    modifier: Modifier = Modifier,
+    product: Product,
+    onEvent : (HomeScreenEvent) -> Unit
+) {
+    ItemCard(
+        modifier = modifier.clickable {
+
+        },
+        inCart = if (product.amountInCart != 0) InCart.On else InCart.Off,
+        itemName = product.name,
+        itemWeight = "${product.measure}  ${product.measureUnit}",
+        itemNameColor = MaterialTheme.colorScheme.onSurface,
+        itemWeightColor = MaterialTheme.colorScheme.onSurface,
+        imageAndTags = {
+            Box(Modifier.fillMaxSize()) {
+                Image(
+                    painter = painterResource(id = R.drawable.tom_yam),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxSize()
+                )
+                Column(
+                    modifier = Modifier
+                        .padding(start = 5.dp, top = 5.dp)
+                        .align(Alignment.TopStart)
+                ) {
+                    product.tagIds.onEachIndexed { index, id ->
+                        when (id) {
+                            2 -> TagVegan()
+                            3 -> TagDiscount()
+                            4 -> TagSpicy()
+                            else -> {}
+                        }
+                        if (index < product.tagIds.size - 1)
+                            Spacer(modifier = Modifier.size(5.dp))
+                    }
+                }
+            }
+        },
+        containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+        buttonAddToCartChildren = {
+            ButtonAddToCartComponent(modifier = Modifier.fillMaxSize(),
+                product = product) {product ->
+                onEvent(HomeScreenEvent.UpdateCart(product))
+            }
+        },
+        counterChildren = {
+            CounterComponent(modifier = Modifier.fillMaxSize(),
+                product = product) {product ->
+                onEvent(HomeScreenEvent.UpdateCart(product))
+            }
+        }
+    )
+}
+
+@Composable
+fun TagSpicy() {
+    Box(modifier = Modifier.size(20.dp)) {
+        Itemtag(
+            modifier = Modifier
+                .clip(CircleShape),
+            type = Type.Spicy,
+            icon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_spicy),
+                    contentDescription = null,
+                    tint = Color.White
+                )
+            }
+        )
+    }
+}
+
+@Composable
+fun TagVegan() {
+    Box(modifier = Modifier.size(20.dp)) {
+        Itemtag(
+            modifier = Modifier
+                .clip(CircleShape),
+            type = Type.Vegan,
+            icon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_vegan),
+                    contentDescription = null,
+                    tint = Color.White
+                )
+            }
+        )
+    }
+}
+
+@Composable
+fun TagDiscount() {
+    Box(modifier = Modifier.size(20.dp)) {
+        Itemtag(
+            modifier = Modifier
+                .clip(CircleShape),
+            type = Type.Discount,
+            icon = {
+                Icon(
+                    painter = painterResource(id = R.drawable.ic_discount),
+                    contentDescription = null,
+                    tint = Color.White
+                )
+            }
+        )
+    }
+}
+
+@Composable
+fun CounterComponent(
+    modifier: Modifier = Modifier,
+    product: Product,
+    onAmountModified : (Product) -> Unit
+) {
+    Counter(
+        modifier = modifier,
+        minusIcon = {
+            Icon(
+                painter = painterResource(id = R.drawable.counter_icon),
+                contentDescription = null,
+                tint = Orange,
+                modifier = Modifier.boxAlign(Alignment.Center, DpOffset.Zero)
+            )
+        },
+        plusIcon = {
+            Icon(
+                painter = painterResource(id = R.drawable.counter_icon1),
+                contentDescription = null,
+                tint = Orange,
+                modifier = Modifier.boxAlign(Alignment.Center, DpOffset.Zero)
+            )
+        },
+        minusButtonBackgroundColor = MaterialTheme.colorScheme.background,
+        plusButtonBackgroudColor = MaterialTheme.colorScheme.background,
+        backgroundColor = MaterialTheme.colorScheme.surfaceContainerHighest,
+        itemCardCounter = product.amountInCart.toString(),
+        itemCardCounterColor = MaterialTheme.colorScheme.onBackground,
+        onMinusButtonClick = {
+            onAmountModified(product.copy(amountInCart = product.amountInCart - 1))
+        },
+        onPlusButtonClick = {
+            onAmountModified(product.copy(amountInCart = product.amountInCart + 1))
+        }
+    )
+}
+
+@Composable
+fun ButtonAddToCartComponent(
+    modifier: Modifier = Modifier,
+    product: Product,
+    onAmountModified : (Product) -> Unit
+) {
+    ButtonAddToCart (
+        modifier = modifier,
+        price = "${product.priceCurrent} ₽",
+        priceBefore = "${product.priceOld} ₽",
+        priceTextColor = MaterialTheme.colorScheme.onBackground,
+        priceBeforeTextColor = MaterialTheme.colorScheme.onBackground,
+        buttonBackgroundColor = MaterialTheme.colorScheme.background,
+        discount = if (product.priceOld != null) Discount.On else Discount.Off,
+        onClick = {
+            onAmountModified(product.copy(amountInCart = product.amountInCart + 1))
+        }
+    )
+}
