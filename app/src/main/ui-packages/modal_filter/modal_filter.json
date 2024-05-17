@@ -3,10 +3,10 @@
   "version": 33,
   "source-key": {
     "type": "figma",
-    "file": "Bcm4m9JQ09UtrmMELfDMmZ",
+    "file": "qiWqVfhN7MXQRPjz6sgZM8",
     "node": "41:6406",
-    "version": "5721969011",
-    "component-id": "5e921770b0236df4f6048555b6f42119e48a3a88"
+    "version": "5761267231",
+    "component-id": "f926a53a4451b0b06ea8ebfe91e37ecff3f06c1f"
   },
   "default": "Modal / Filter",
   "design": {
@@ -30,11 +30,7 @@
       },
       {
         "type": "group",
-        "id": "Button / Basic"
-      },
-      {
-        "type": "text",
-        "id": "Label"
+        "id": "applyButton"
       }
     ],
     "modes": {
@@ -50,8 +46,6 @@
                 "sizing-mode": "shrink"
               }
             },
-            "main-axis-align": "start",
-            "cross-axis-align": "start",
             "children": [
               "Body"
             ],
@@ -87,12 +81,10 @@
                 "sizing-mode": "shrink"
               }
             },
-            "main-axis-align": "start",
-            "cross-axis-align": "start",
             "children": [
               "Title",
               "FilterList",
-              "Button / Basic"
+              "applyButton"
             ],
             "item-spacing": 16.0,
             "background-color": "$backgroundColor",
@@ -109,16 +101,15 @@
                 "sizing-mode": "shrink"
               }
             },
-            "font-weight": "^md2.sys.typescale.headline6.weight",
+            "font-weight": 500.0,
             "color": "$titleColor",
             "text-content": "$title",
             "overflow": "visible",
             "max-lines": -1,
             "text-align": "left",
-            "text-size": "^md2.sys.typescale.headline6.size",
-            "letter-spacing": "^md2.sys.typescale.headline6.tracking",
-            "line-height": "^md2.sys.typescale.headline6.line-height",
-            "typeface": "^md2.sys.typescale.headline6.font"
+            "text-size": 20.0,
+            "letter-spacing": 0.15000000596046448,
+            "line-height": 1.2
           },
           {
             "id": "FilterList",
@@ -129,61 +120,27 @@
               },
               "height-constraints": {
                 "sizing-mode": "shrink",
-                "min": 48.0
+                "min": 44.0
               }
             },
-            "main-axis-align": "start",
-            "cross-axis-align": "start",
-            "children": "$Filters",
+            "children": "$filters",
             "clip-content": false
           },
           {
-            "id": "Button / Basic",
-            "padding": 16.0,
-            "border-radius": 8.0,
-            "drop-shadow": {
-              "color": {
-                "alpha": 0.4980392156862745,
-                "hue": 0.0,
-                "saturation": 0.0,
-                "value": 0.11764705882352941
-              },
-              "blur": 16.0,
-              "offset-x": 0.0,
-              "offset-y": 4.0,
-              "spread": -10.0,
-              "blend-mode": "normal"
-            },
-            "tap-handler": "$onApplyButtonClick",
+            "id": "applyButton",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
                 "value": 1.0
               },
               "height-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "fixed",
+                "value": 48.0
               }
             },
-            "arrangement": "row",
-            "children": [
-              "Label"
-            ],
-            "item-spacing": 8.0,
-            "background-color": {
-              "alpha": 1.0,
-              "hue": 17.757847533632287,
-              "saturation": 0.9253112033195021,
-              "value": 0.9450980392156862
-            }
-          },
-          {
-            "id": "Label",
-            "font-weight": 500.0,
-            "color": "^md2.sys.color.surface",
-            "text-content": "$applyButtonText",
-            "overflow": "visible",
-            "text-align-vertical": "center",
-            "text-size": 16.0
+            "is-structured": false,
+            "children": "$applyButton",
+            "clip-content": false
           }
         ]
       }
@@ -205,50 +162,15 @@
       "required": false,
       "description": ""
     },
-    "Filters": {
+    "filters": {
       "data-type": "list-item",
       "required": false,
       "description": ""
     },
-    "onApplyButtonClick": {
-      "data-type": "void-callback",
+    "applyButton": {
+      "data-type": "list-item",
       "required": false,
       "description": ""
-    },
-    "applyButtonText": {
-      "data-type": "text",
-      "required": false,
-      "description": ""
-    }
-  },
-  "ambients": {
-    "md2.sys.color.on-surface": {
-      "data-type": "color",
-      "description": null
-    },
-    "md2.sys.typescale.headline6.font": {
-      "data-type": "typeface",
-      "description": null
-    },
-    "md2.sys.typescale.headline6.weight": {
-      "data-type": "double",
-      "description": null
-    },
-    "md2.sys.typescale.headline6.size": {
-      "data-type": "double",
-      "description": null
-    },
-    "md2.sys.typescale.headline6.tracking": {
-      "data-type": "double",
-      "description": null
-    },
-    "md2.sys.typescale.headline6.line-height": {
-      "data-type": "double",
-      "description": null
-    },
-    "md2.sys.color.surface": {
-      "data-type": "color",
-      "description": null
     }
   },
   "previews": [
@@ -256,7 +178,7 @@
       "design": "Modal / Filter",
       "size": {
         "width": 375.0,
-        "height": 216.0
+        "height": 212.0
       },
       "parameters": {
         "backgroundColor": {
@@ -272,25 +194,32 @@
           "saturation": 0.0,
           "value": 0.0
         },
-        "applyButtonText": "Готово"
-      },
-      "ambients": {
-        "md2.sys.color.on-surface": {
-          "alpha": 0.8666666666666667,
-          "hue": 0.0,
-          "saturation": 0.0,
-          "value": 0.0
-        },
-        "md2.sys.typescale.headline6.weight": 500.0,
-        "md2.sys.typescale.headline6.size": 20.0,
-        "md2.sys.typescale.headline6.tracking": 0.15000000596046448,
-        "md2.sys.typescale.headline6.line-height": 1.2,
-        "md2.sys.color.surface": {
-          "alpha": 1.0,
-          "hue": 0.0,
-          "saturation": 0.0,
-          "value": 1.0
-        }
+        "applyButton": [
+          {
+            "type": "vector",
+            "presence": false,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.169952392578125
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 110.66009521484375
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ]
       }
     }
   ],

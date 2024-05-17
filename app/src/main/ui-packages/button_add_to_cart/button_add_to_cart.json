@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "8oJWPD01w9gJVyjmT9ROVO",
     "node": "33:12061",
-    "version": "5707083727",
+    "version": "5752723549",
     "component-id": "645814c846d72e94d4f3ea3002a16d8585048421"
   },
   "default": "Discount=off",
@@ -167,6 +167,16 @@
       "description": ""
     }
   },
+  "ambients": {
+    "md2.sys.color.surface": {
+      "data-type": "color",
+      "description": null
+    },
+    "md2.sys.color.on-surface": {
+      "data-type": "color",
+      "description": null
+    }
+  },
   "previews": [
     {
       "design": "Discount=off",
@@ -191,6 +201,20 @@
         "priceBefore": "480 ₽",
         "priceBeforeTextColor": {
           "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
+          "alpha": 0.8666666666666667,
           "hue": 0.0,
           "saturation": 0.0,
           "value": 0.0
@@ -220,6 +244,20 @@
         "priceBefore": "480 ₽",
         "priceBeforeTextColor": {
           "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
+          "alpha": 0.8666666666666667,
           "hue": 0.0,
           "saturation": 0.0,
           "value": 0.0

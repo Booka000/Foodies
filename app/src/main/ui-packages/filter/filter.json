@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "8oJWPD01w9gJVyjmT9ROVO",
     "node": "43:5640",
-    "version": "5720436013",
+    "version": "5781887701",
     "component-id": "c9e9089a6649740ec9818eb288805de2e3607df9"
   },
   "default": "Property 1=Default",
@@ -43,13 +43,6 @@
                 "sizing-mode": "shrink"
               }
             },
-            "stroke-width": 1.0,
-            "stroke-color": {
-              "alpha": 0.11764705882352941,
-              "hue": 0.0,
-              "saturation": 0.0,
-              "value": 0.0
-            },
             "arrangement": "row",
             "main-axis-align": "start",
             "cross-axis-align": "start",
@@ -58,6 +51,7 @@
               "Checkbox"
             ],
             "item-spacing": 16.0,
+            "background-color": "$BackgroundColor",
             "clip-content": false
           },
           {
@@ -71,8 +65,8 @@
                 "sizing-mode": "shrink"
               }
             },
-            "color": "$tagNameColor",
-            "text-content": "$tagName",
+            "color": "$TagNameColor",
+            "text-content": "$TagName",
             "overflow": "visible",
             "max-lines": -1,
             "text-align": "left",
@@ -100,12 +94,17 @@
     }
   },
   "parameters": {
-    "tagName": {
+    "BackgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "TagName": {
       "data-type": "text",
       "required": false,
       "description": ""
     },
-    "tagNameColor": {
+    "TagNameColor": {
       "data-type": "color",
       "required": false,
       "description": ""
@@ -120,12 +119,12 @@
     {
       "design": "Property 1=Default",
       "size": {
-        "width": 327.0,
+        "width": 343.3955383300781,
         "height": 48.0
       },
       "parameters": {
-        "tagName": "Label",
-        "tagNameColor": {
+        "TagName": "Label",
+        "TagNameColor": {
           "alpha": 0.8666666666666667,
           "hue": 0.0,
           "saturation": 0.0,

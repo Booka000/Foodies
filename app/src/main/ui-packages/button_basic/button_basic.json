@@ -3,10 +3,10 @@
   "version": 33,
   "source-key": {
     "type": "figma",
-    "file": "Bcm4m9JQ09UtrmMELfDMmZ",
+    "file": "qiWqVfhN7MXQRPjz6sgZM8",
     "node": "33:12142",
-    "version": "5721932411",
-    "component-id": "8318e65654cbc134c2ba3e66e411bd37478a00f4"
+    "version": "5752270796",
+    "component-id": "dbe10341e6adc6fe2ebb2e43883db9aed8a9e103"
   },
   "default": "Icon Left=Off",
   "design": {
@@ -45,6 +45,7 @@
               "spread": -10.0,
               "blend-mode": "normal"
             },
+            "tap-handler": "$onClick",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "shrink"
@@ -68,12 +69,7 @@
           {
             "id": "Label",
             "font-weight": 500.0,
-            "color": {
-              "alpha": 1.0,
-              "hue": 0.0,
-              "saturation": 0.0,
-              "value": 1.0
-            },
+            "color": "$textColor",
             "text-content": "$text",
             "overflow": "visible",
             "text-align-vertical": "center",
@@ -105,6 +101,7 @@
               "spread": -10.0,
               "blend-mode": "normal"
             },
+            "tap-handler": "$onClick",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "shrink"
@@ -128,30 +125,24 @@
           },
           {
             "id": "Cart",
-            "opacity": 100.0,
             "size-constraints": {
               "width-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "fixed",
+                "value": 20.0
               },
               "height-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "fixed",
+                "value": 20.0
               }
             },
-            "arrangement": "row",
-            "main-axis-align": "start",
-            "cross-axis-align": "start",
-            "children": "$Icon",
+            "is-structured": false,
+            "children": "$cartIcon",
             "clip-content": false
           },
           {
             "id": "Label",
             "font-weight": 500.0,
-            "color": {
-              "alpha": 1.0,
-              "hue": 0.0,
-              "saturation": 0.0,
-              "value": 1.0
-            },
+            "color": "$textColor",
             "text-content": "$text",
             "overflow": "visible",
             "text-align-vertical": "center",
@@ -162,15 +153,31 @@
     }
   },
   "parameters": {
+    "onClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
     "text": {
       "data-type": "text",
       "required": false,
       "description": ""
     },
-    "Icon": {
+    "textColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "cartIcon": {
       "data-type": "list-item",
       "required": false,
       "description": ""
+    }
+  },
+  "ambients": {
+    "md2.sys.color.surface": {
+      "data-type": "color",
+      "description": null
     }
   },
   "previews": [
@@ -182,23 +189,20 @@
       },
       "parameters": {
         "text": "Label",
-        "Icon": [
-          {
-            "type": "group",
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "fixed",
-                "value": 20.0
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": 20.0
-              }
-            },
-            "is-structured": false,
-            "clip-content": false
-          }
-        ]
+        "textColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
       }
     },
     {
@@ -209,23 +213,20 @@
       },
       "parameters": {
         "text": "Label",
-        "Icon": [
-          {
-            "type": "group",
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "fixed",
-                "value": 20.0
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": 20.0
-              }
-            },
-            "is-structured": false,
-            "clip-content": false
-          }
-        ]
+        "textColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
       }
     }
   ],

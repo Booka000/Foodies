@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "8oJWPD01w9gJVyjmT9ROVO",
     "node": "33:12067",
-    "version": "5707083727",
+    "version": "5752723549",
     "component-id": "7757426e875c603b4f389f81292456edbdb0456c"
   },
   "default": "In cart=Off",
@@ -110,7 +110,6 @@
           },
           {
             "id": "Title",
-            "padding": "$Title padding",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -142,7 +141,7 @@
                 "value": 44.0
               }
             },
-            "children": "$Button / AddToCart children",
+            "children": "$addToCardButton",
             "item-spacing": 8.0,
             "clip-content": false
           },
@@ -251,7 +250,6 @@
           },
           {
             "id": "Title",
-            "padding": "$Title padding",
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -283,7 +281,7 @@
                 "value": 44.0
               }
             },
-            "children": "$Counter children",
+            "children": "$counter",
             "item-spacing": 12.0,
             "clip-content": false
           },
@@ -341,12 +339,7 @@
       "required": false,
       "description": ""
     },
-    "Title padding": {
-      "data-type": "edge-data",
-      "required": false,
-      "description": ""
-    },
-    "Button / AddToCart children": {
+    "addToCardButton": {
       "data-type": "list-item",
       "required": false,
       "description": ""
@@ -371,7 +364,7 @@
       "required": false,
       "description": ""
     },
-    "Counter children": {
+    "counter": {
       "data-type": "list-item",
       "required": false,
       "description": ""
@@ -413,7 +406,7 @@
             }
           }
         ],
-        "Button / AddToCart children": [
+        "addToCardButton": [
           {
             "type": "adin_component",
             "key": "button_add_to_cart",
@@ -469,7 +462,7 @@
           "saturation": 0.0,
           "value": 0.0
         },
-        "Counter children": [
+        "counter": [
           {
             "type": "adin_component",
             "key": "counter",
@@ -580,7 +573,7 @@
             }
           }
         ],
-        "Button / AddToCart children": [
+        "addToCardButton": [
           {
             "type": "adin_component",
             "key": "button_add_to_cart",
@@ -636,7 +629,7 @@
           "saturation": 0.0,
           "value": 0.0
         },
-        "Counter children": [
+        "counter": [
           {
             "type": "adin_component",
             "key": "counter",

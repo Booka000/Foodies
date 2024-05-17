@@ -3,6 +3,7 @@ package com.albara.foodis.presentation.home_screen
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.albara.foodis.domain.modal.Product
+import com.albara.foodis.domain.modal.Tag
 import com.albara.foodis.domain.use_case.fetch_from_api.GetDataFromApiUseCase
 import com.albara.foodis.domain.use_case.manege_date_in_local.AccessDataInLocalUseCase
 import com.albara.foodis.util.Resource
@@ -25,62 +26,89 @@ class HomeScreenViewModel @Inject constructor(
     private val filters = MutableStateFlow(Filters())
 
     val state = combine(_state,dataFromApi(), cart.getCartProducts(), filters) {
-        _state, apiData, cart, filters ->
+            _state, apiData, cart, filters ->
         when(apiData) {
             is Resource.Error -> _state.copy(error = apiData.message)
             is Resource.Success -> {
-                if(_state.isSearching)
+                if(_state.isSearching) {
+                    val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
+                            .applySearch(_state.searchQuery)
+
+                    val error = if (products.isNotEmpty()) ""
+                    else if(_state.searchQuery.isNotBlank())
+                        "Ничего не нашлось :("
+                    else "Введите название блюда,\nкоторое ищете"
+
                     _state.copy(
-                        products = mergeLists(apiData.data.first, cart).filter {
-                                product -> product.name.contains(_state.searchQuery) },
+                        products = products,
                         tags = apiData.data.second,
                         categories = apiData.data.third,
-                        totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent }
+                        totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
+                        error = error
                     )
-                else
+                }
+                else {
+                    val selectedCategoryId = apiData.data.third[filters.selectedCategoryIndex].id
+
+                    val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
+                        .applyFilters(selectedCategoryId, filters.selectedTags.map { it.id })
+
+                    val tags = apiData.data.second
+                        .mergeWithoutDuplicates(filters.selectedTags, Tag::id)
+
+                    val error = if (products.isEmpty()) "Таких блюд нет :(\nПопробуйте изменить фильтры"
+                    else ""
+
                     _state.copy(
-                        products = mergeLists(apiData.data.first, cart).filter {
-                                product ->  filterProduct(product, filters)},
-                        tags = apiData.data.second,
+                        products = products,
+                        tags = tags,
                         categories = apiData.data.third,
-                        totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent }
+                        totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
+                        selectedTagsIndicator = filters.selectedTags.size,
+                        error = error,
+                        selectedCategoryId = selectedCategoryId
                     )
+                }
             }
         }
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), HomeScreenState(isLoading = true))
+    }.stateIn(
+        viewModelScope,
+        SharingStarted.WhileSubscribed(5000),
+        HomeScreenState(isLoading = true)
+    )
 
-    private fun filterProduct(product : Product, filters: Filters) : Boolean {
-        return if(filters.categoryId != null)
-            product.categoryId == filters.categoryId
-                    && product.tagIds.containsAll(filters.tagsIds)
-        else
-            product.tagIds.containsAll(filters.tagsIds)
+    private fun <T, K> List<T>.mergeWithoutDuplicates(
+        second: List<T>,
+        keySelector: (T) -> K
+    ) : List<T>
+    {
+        val map1 = this.associateBy(keySelector)
+        val map2 = second.associateBy(keySelector)
+        return (map1 + map2).values.toList()
     }
 
-    private fun mergeLists(
-        first : List<Product>,
-        second : List<Product>
-    ) : List<Product> {
-        val resultMap = mutableMapOf<Int, Product>()
+    private fun List<Product>.applySearch(
+        searchQuery: String
+    ) : List<Product>{
+        return if(searchQuery.isBlank())
+            emptyList()
+        else
+            this.filter { product -> product.name.contains(searchQuery, ignoreCase = true) }
+    }
 
-        // Add objects from list1 to resultMap
-        first.forEach { obj ->
-            resultMap[obj.id] = obj
-        }
-
-        // Add objects from list2 to resultMap, replacing existing objects if id matches
-        second.forEach { obj ->
-            resultMap[obj.id] = obj
-        }
-
-        // Convert resultMap back to a list
-        return resultMap.values.toList()
+    private fun List<Product>.applyFilters(
+        categoryId: Int,
+        selectedTags : List<Int>
+    ) : List<Product>{
+        val result = this.filter { product -> product.categoryId == categoryId &&
+                    product.tagIds.containsAll(selectedTags)}
+        return result
     }
 
     fun onEvent(event : HomeScreenEvent) {
         when(event){
-            is HomeScreenEvent.UpdateCategoryId -> {
-                filters.update { it.copy(categoryId = event.categoryId)}
+            is HomeScreenEvent.UpdateSelectedCategoryIndex -> {
+                filters.update { it.copy(selectedCategoryIndex = event.index)}
             }
 
             is HomeScreenEvent.UpdateCart -> {
@@ -88,10 +116,9 @@ class HomeScreenViewModel @Inject constructor(
                     if(event.product.amountInCart == 0)
                         cart.deleteProduct(event.product.toCartEntity())
                     else {
-                        cart.upsertProduct(event.product.toCartEntity()) 
+                        cart.upsertProduct(event.product.toCartEntity())
                     }
                 }
-
             }
 
             is HomeScreenEvent.CloseBottomSheet -> {
@@ -100,6 +127,22 @@ class HomeScreenViewModel @Inject constructor(
 
             is HomeScreenEvent.OpenBottomSheet -> {
                 _state.update { it.copy(isEditingFilters = true) }
+            }
+
+            is HomeScreenEvent.UpdateTags -> {
+                filters.update { it.copy(selectedTags = event.tags) }
+            }
+
+            HomeScreenEvent.ShowSearchComponent -> {
+                _state.update { it.copy(isSearching = true) }
+            }
+
+            HomeScreenEvent.HideSearchComponent -> {
+                _state.update { it.copy(isSearching = false, searchQuery = "") }
+            }
+
+            is HomeScreenEvent.IsSearching -> {
+                _state.update { it.copy(searchQuery = event.searchQuery) }
             }
         }
     }

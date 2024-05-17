@@ -5,7 +5,7 @@
     "type": "figma",
     "file": "8oJWPD01w9gJVyjmT9ROVO",
     "node": "33:12148",
-    "version": "5707083727",
+    "version": "5752723549",
     "component-id": "b88db2d5a9e6ed0e7ba3cb802dd8c54bae01b467"
   },
   "default": "Type=ItemCard",
@@ -54,6 +54,7 @@
         "rules": [
           {
             "id": "top_level",
+            "border-radius": 8.0,
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -199,6 +200,7 @@
         "rules": [
           {
             "id": "top_level",
+            "border-radius": 8.0,
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "shrink"
@@ -408,6 +410,16 @@
       "description": ""
     }
   },
+  "ambients": {
+    "md2.sys.color.surface": {
+      "data-type": "color",
+      "description": null
+    },
+    "md2.sys.color.on-surface": {
+      "data-type": "color",
+      "description": null
+    }
+  },
   "previews": [
     {
       "design": "Type=ItemCard",
@@ -481,6 +493,20 @@
           "saturation": 0.0,
           "value": 0.0
         }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
       }
     },
     {
@@ -549,6 +575,20 @@
         ],
         "cartCounter": "1",
         "cartCounterColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
           "alpha": 0.8666666666666667,
           "hue": 0.0,
           "saturation": 0.0,

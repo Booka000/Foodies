@@ -1,7 +1,8 @@
 package com.albara.foodis.presentation.home_screen
 
+import com.albara.foodis.domain.modal.Tag
 
 data class Filters(
-    val categoryId : Int? = null,
-    val tagsIds : List<Int> = emptyList(),
+    val selectedCategoryIndex : Int = 0,
+    val selectedTags : List<Tag> = emptyList(),
 )

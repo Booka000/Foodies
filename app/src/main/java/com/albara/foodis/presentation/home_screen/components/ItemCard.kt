@@ -58,27 +58,27 @@ fun ItemCard(
                         .padding(start = 5.dp, top = 5.dp)
                         .align(Alignment.TopStart)
                 ) {
-                    product.tagIds.onEachIndexed { index, id ->
+                    product.tagIds.onEach {id ->
                         when (id) {
                             2 -> TagVegan()
-                            3 -> TagDiscount()
                             4 -> TagSpicy()
-                            else -> {}
                         }
-                        if (index < product.tagIds.size - 1)
-                            Spacer(modifier = Modifier.size(5.dp))
+                    }
+
+                    product.priceOld?.let {
+                        TagDiscount()
                     }
                 }
             }
         },
         containerColor = MaterialTheme.colorScheme.surfaceContainerHighest,
-        buttonAddToCartChildren = {
+        addToCardButton = {
             ButtonAddToCartComponent(modifier = Modifier.fillMaxSize(),
                 product = product) {product ->
                 onEvent(HomeScreenEvent.UpdateCart(product))
             }
         },
-        counterChildren = {
+        counter = {
             CounterComponent(modifier = Modifier.fillMaxSize(),
                 product = product) {product ->
                 onEvent(HomeScreenEvent.UpdateCart(product))
@@ -103,6 +103,7 @@ fun TagSpicy() {
             }
         )
     }
+    Spacer(modifier = Modifier.size(5.dp))
 }
 
 @Composable
@@ -121,6 +122,7 @@ fun TagVegan() {
             }
         )
     }
+    Spacer(modifier = Modifier.size(5.dp))
 }
 
 @Composable

@@ -3,10 +3,10 @@
   "version": 33,
   "source-key": {
     "type": "figma",
-    "file": "vLw7KXjwhommYXI38bO8zi",
-    "node": "58:301",
-    "version": "5649073434",
-    "component-id": "b7766dfc9093c2fc9eb9d52a268f0fa4840cf7ef"
+    "file": "SotaXfLUQ3GBHLavmaZeL3",
+    "node": "41:6405",
+    "version": "5780082480",
+    "component-id": "4caeb365e8144c8b14b05d5ce4342b901e03d34d"
   },
   "default": "Topline",
   "design": {
@@ -27,14 +27,6 @@
       {
         "type": "group",
         "id": "Button / Search"
-      },
-      {
-        "type": "group",
-        "id": "Filter"
-      },
-      {
-        "type": "group",
-        "id": "Search"
       }
     ],
     "modes": {
@@ -42,11 +34,7 @@
         "rules": [
           {
             "id": "top_level",
-            "padding": {
-              "left": 8.0,
-              "top": 16.0,
-              "right": 8.0
-            },
+            "padding": 8.0,
             "size-constraints": {
               "width-constraints": {
                 "sizing-mode": "proportional",
@@ -68,22 +56,19 @@
           },
           {
             "id": "Button / Filter",
-            "padding": 10.0,
             "tap-handler": "$onFilterClick",
             "size-constraints": {
               "width-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "fixed",
+                "value": 44.0
               },
               "height-constraints": {
-                "sizing-mode": "shrink"
+                "sizing-mode": "proportional",
+                "value": 1.0
               }
             },
             "arrangement": "row",
-            "main-axis-align": "start",
-            "cross-axis-align": "start",
-            "children": [
-              "Filter"
-            ],
+            "children": "$filterIcon",
             "item-spacing": 8.0,
             "clip-content": false
           },
@@ -100,7 +85,7 @@
               }
             },
             "is-structured": false,
-            "children": "$Logo",
+            "children": "$logo",
             "clip-content": false
           },
           {
@@ -118,42 +103,8 @@
             "arrangement": "row",
             "main-axis-align": "start",
             "cross-axis-align": "start",
-            "children": [
-              "Search"
-            ],
-            "item-spacing": 8.0,
-            "clip-content": false
-          },
-          {
-            "id": "Filter",
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "fixed",
-                "value": 24.0
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": 24.0
-              }
-            },
-            "is-structured": false,
-            "children": "$filterIcon",
-            "clip-content": false
-          },
-          {
-            "id": "Search",
-            "size-constraints": {
-              "width-constraints": {
-                "sizing-mode": "fixed",
-                "value": 24.0
-              },
-              "height-constraints": {
-                "sizing-mode": "fixed",
-                "value": 24.0
-              }
-            },
-            "is-structured": false,
             "children": "$searchIcon",
+            "item-spacing": 8.0,
             "clip-content": false
           }
         ]
@@ -166,28 +117,28 @@
       "required": false,
       "description": ""
     },
+    "filterIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
     "onFilterClick": {
       "data-type": "void-callback",
       "required": false,
       "description": ""
     },
-    "Logo": {
-      "data-type": "list-item",
-      "required": false,
-      "description": ""
-    },
-    "onSearchClick": {
-      "data-type": "void-callback",
-      "required": false,
-      "description": ""
-    },
-    "filterIcon": {
+    "logo": {
       "data-type": "list-item",
       "required": false,
       "description": ""
     },
     "searchIcon": {
       "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onSearchClick": {
+      "data-type": "void-callback",
       "required": false,
       "description": ""
     }
@@ -206,7 +157,24 @@
           "saturation": 0.0,
           "value": 1.0
         },
-        "Logo": [
+        "filterIcon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "clip-content": false
+          }
+        ],
+        "logo": [
           {
             "type": "vector",
             "alignment": {
@@ -230,6 +198,23 @@
               }
             },
             "vector-content": "logo.svg"
+          }
+        ],
+        "searchIcon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "clip-content": false
           }
         ]
       }
