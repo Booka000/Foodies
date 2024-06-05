@@ -32,26 +32,35 @@ class HomeScreenViewModel @Inject constructor(
             is Resource.Success -> {
                 if(_state.isSearching) {
                     val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
-                            .applySearch(_state.searchQuery)
+
+                    val product = when(filters.selectedProductId) {
+                        null -> null
+                        else -> products.first{product -> product.id == filters.selectedProductId }
+                    }
 
                     val error = if (products.isNotEmpty()) ""
-                    else if(_state.searchQuery.isNotBlank())
+                    else if(filters.searchQuery.isNotBlank())
                         "Ничего не нашлось :("
                     else "Введите название блюда,\nкоторое ищете"
 
                     _state.copy(
-                        products = products,
+                        products = products.applySearch(filters.searchQuery),
                         tags = apiData.data.second,
                         categories = apiData.data.third,
                         totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
-                        error = error
+                        error = error,
+                        selectedProduct = product
                     )
                 }
                 else {
                     val selectedCategoryId = apiData.data.third[filters.selectedCategoryIndex].id
 
                     val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
-                        .applyFilters(selectedCategoryId, filters.selectedTags.map { it.id })
+
+                    val product = when(filters.selectedProductId) {
+                        null -> null
+                        else -> products.first{product -> product.id == filters.selectedProductId }
+                    }
 
                     val tags = apiData.data.second
                         .mergeWithoutDuplicates(filters.selectedTags, Tag::id)
@@ -60,13 +69,16 @@ class HomeScreenViewModel @Inject constructor(
                     else ""
 
                     _state.copy(
-                        products = products,
+                        products = products.applyFilters(
+                            selectedCategoryId,
+                            filters.selectedTags.map { it.id }
+                        ),
                         tags = tags,
                         categories = apiData.data.third,
                         totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
                         selectedTagsIndicator = filters.selectedTags.size,
                         error = error,
-                        selectedCategoryId = selectedCategoryId
+                        selectedProduct = product
                     )
                 }
             }
@@ -138,11 +150,16 @@ class HomeScreenViewModel @Inject constructor(
             }
 
             HomeScreenEvent.HideSearchComponent -> {
-                _state.update { it.copy(isSearching = false, searchQuery = "") }
+                _state.update { it.copy(isSearching = false)}
+                filters.update { it.copy(searchQuery = "") }
             }
 
             is HomeScreenEvent.IsSearching -> {
-                _state.update { it.copy(searchQuery = event.searchQuery) }
+                filters.update { it.copy(searchQuery = event.searchQuery) }
+            }
+
+            is HomeScreenEvent.UpdateSelectedProductId -> {
+                filters.update { it.copy(selectedProductId = event.id) }
             }
         }
     }

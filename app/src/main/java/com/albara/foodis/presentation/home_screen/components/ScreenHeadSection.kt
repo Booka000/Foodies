@@ -10,7 +10,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -86,7 +86,7 @@ fun SearchComponent(
     modifier: Modifier = Modifier,
     onEvent : (HomeScreenEvent) -> Unit
 ) {
-    var text by remember {
+    var text by rememberSaveable {
         mutableStateOf("")
     }
     Search(

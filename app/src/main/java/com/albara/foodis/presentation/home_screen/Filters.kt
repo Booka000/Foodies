@@ -5,4 +5,6 @@ import com.albara.foodis.domain.modal.Tag
 data class Filters(
     val selectedCategoryIndex : Int = 0,
     val selectedTags : List<Tag> = emptyList(),
+    val searchQuery : String = "",
+    val selectedProductId: Int? = null
 )

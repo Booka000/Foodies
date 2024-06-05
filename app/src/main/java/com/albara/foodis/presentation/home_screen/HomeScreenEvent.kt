@@ -12,5 +12,5 @@ sealed interface HomeScreenEvent {
     data object ShowSearchComponent : HomeScreenEvent
     data object HideSearchComponent : HomeScreenEvent
     data class IsSearching(val searchQuery : String) : HomeScreenEvent
-
+    data class UpdateSelectedProductId(val id : Int) : HomeScreenEvent
 }

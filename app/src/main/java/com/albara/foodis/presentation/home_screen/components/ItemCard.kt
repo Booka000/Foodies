@@ -39,7 +39,7 @@ fun ItemCard(
 ) {
     ItemCard(
         modifier = modifier.clickable {
-
+            onEvent(HomeScreenEvent.UpdateSelectedProductId(product.id))
         },
         inCart = if (product.amountInCart != 0) InCart.On else InCart.Off,
         itemName = product.name,

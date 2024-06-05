@@ -1,7 +1,10 @@
 package com.albara.foodis.domain.modal
 
+import android.os.Parcelable
 import com.albara.foodis.data.local.entity.CartEntity
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Product(
     val id: Int,
     val categoryId: Int,
@@ -18,7 +21,7 @@ data class Product(
     val carbohydratesPer100Grams: Double,
     val tagIds: List<Int>,
     val amountInCart : Int = 0
-) {
+) : Parcelable {
     fun toCartEntity() : CartEntity {
         return CartEntity(
             id,

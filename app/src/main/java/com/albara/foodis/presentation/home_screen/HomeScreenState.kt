@@ -11,9 +11,8 @@ data class HomeScreenState (
     val isLoading : Boolean = false,
     val error : String = "",
     val isSearching : Boolean = false,
-    val searchQuery: String = "",
     val totalInCart : Int = 0,
     val isEditingFilters : Boolean = false,
     val selectedTagsIndicator : Int = 0,
-    val selectedCategoryId : Int = 0
+    val selectedProduct: Product? = null
 )

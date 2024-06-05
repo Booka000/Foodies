@@ -22,9 +22,9 @@ class GetDataFromApiUseCase @Inject constructor (
             val categories = repository.fetchCategories()
             emit(Resource.Success(Triple(products, tags, categories)))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
+            emit(Resource.Error(e.localizedMessage ?: "произошла непредвиденная ошибка"))
         } catch (e: IOException) {
-            emit(Resource.Error("Couldn't reach server. Check your internet connection."))
+            emit(Resource.Error("Не удалось подключиться к серверу.\n Проверьте подключение к Интернету."))
         }
     }
 }
