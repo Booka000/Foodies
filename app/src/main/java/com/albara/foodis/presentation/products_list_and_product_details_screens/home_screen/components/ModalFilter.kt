@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen.components
+package com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -22,7 +22,7 @@ import com.albara.foodis.buttonbasic.ButtonBasic
 import com.albara.foodis.domain.modal.Tag
 import com.albara.foodis.filter.Filter
 import com.albara.foodis.modalfilter.ModalFilter
-import com.albara.foodis.presentation.home_screen.HomeScreenEvent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedEvent
 import com.albara.foodis.presentation.ui.theme.Orange
 import kotlinx.coroutines.launch
 
@@ -32,7 +32,7 @@ fun ModalBottomSheetComponent(
     modifier: Modifier = Modifier,
     tags : List<Tag>,
     isVisible : Boolean,
-    onEvent : (HomeScreenEvent) -> Unit
+    onEvent : (SharedEvent) -> Unit
 ) {
     val modalBottomSheetState = rememberModalBottomSheetState(
         skipPartiallyExpanded = true
@@ -46,7 +46,7 @@ fun ModalBottomSheetComponent(
         ModalBottomSheet(
             modifier = modifier,
             sheetState = modalBottomSheetState, onDismissRequest = {
-                onEvent(HomeScreenEvent.CloseBottomSheet)
+                onEvent(SharedEvent.CloseBottomSheet)
             },
             dragHandle = null
         ) {
@@ -62,8 +62,8 @@ fun ModalBottomSheetComponent(
                         onClick = {
                             scope.launch { modalBottomSheetState.hide() }.invokeOnCompletion {
                                 if (!modalBottomSheetState.isVisible) {
-                                    onEvent(HomeScreenEvent.CloseBottomSheet)
-                                    onEvent(HomeScreenEvent.UpdateTags(mutableTags.filter { tag -> tag.isSelected }))
+                                    onEvent(SharedEvent.CloseBottomSheet)
+                                    onEvent(SharedEvent.UpdateTags(mutableTags.filter { tag -> tag.isSelected }))
                                 }
                             }
                         }

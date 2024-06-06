@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen
+package com.albara.foodis.presentation.products_list_and_product_details_screens.shared
 
 import com.albara.foodis.domain.modal.Tag
 

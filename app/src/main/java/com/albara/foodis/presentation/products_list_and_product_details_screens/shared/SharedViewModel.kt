@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen
+package com.albara.foodis.presentation.products_list_and_product_details_screens.shared
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -17,12 +17,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeScreenViewModel @Inject constructor(
+class SharedViewModel @Inject constructor(
     dataFromApi : GetDataFromApiUseCase,
     private val cart : AccessDataInLocalUseCase
 ) : ViewModel() {
 
-    private val _state  = MutableStateFlow(HomeScreenState())
+    private val _state  = MutableStateFlow(SharedState())
     private val filters = MutableStateFlow(Filters())
 
     val state = combine(_state,dataFromApi(), cart.getCartProducts(), filters) {
@@ -32,10 +32,11 @@ class HomeScreenViewModel @Inject constructor(
             is Resource.Success -> {
                 if(_state.isSearching) {
                     val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
+                        .applySearch(filters.searchQuery)
 
                     val product = when(filters.selectedProductId) {
                         null -> null
-                        else -> products.first{product -> product.id == filters.selectedProductId }
+                        else -> products.find{product -> product.id == filters.selectedProductId }
                     }
 
                     val error = if (products.isNotEmpty()) ""
@@ -44,7 +45,7 @@ class HomeScreenViewModel @Inject constructor(
                     else "Введите название блюда,\nкоторое ищете"
 
                     _state.copy(
-                        products = products.applySearch(filters.searchQuery),
+                        products = products,
                         tags = apiData.data.second,
                         categories = apiData.data.third,
                         totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
@@ -56,10 +57,14 @@ class HomeScreenViewModel @Inject constructor(
                     val selectedCategoryId = apiData.data.third[filters.selectedCategoryIndex].id
 
                     val products = apiData.data.first.mergeWithoutDuplicates(cart, Product::id)
+                        .applyFilters(
+                            selectedCategoryId,
+                            filters.selectedTags.map { it.id }
+                        )
 
                     val product = when(filters.selectedProductId) {
                         null -> null
-                        else -> products.first{product -> product.id == filters.selectedProductId }
+                        else -> products.find{product -> product.id == filters.selectedProductId }
                     }
 
                     val tags = apiData.data.second
@@ -69,10 +74,7 @@ class HomeScreenViewModel @Inject constructor(
                     else ""
 
                     _state.copy(
-                        products = products.applyFilters(
-                            selectedCategoryId,
-                            filters.selectedTags.map { it.id }
-                        ),
+                        products = products,
                         tags = tags,
                         categories = apiData.data.third,
                         totalInCart = cart.sumOf { it.amountInCart * it.priceCurrent },
@@ -86,7 +88,7 @@ class HomeScreenViewModel @Inject constructor(
     }.stateIn(
         viewModelScope,
         SharingStarted.WhileSubscribed(5000),
-        HomeScreenState(isLoading = true)
+        SharedState(isLoading = true)
     )
 
     private fun <T, K> List<T>.mergeWithoutDuplicates(
@@ -117,13 +119,13 @@ class HomeScreenViewModel @Inject constructor(
         return result
     }
 
-    fun onEvent(event : HomeScreenEvent) {
+    fun onEvent(event : SharedEvent) {
         when(event){
-            is HomeScreenEvent.UpdateSelectedCategoryIndex -> {
+            is SharedEvent.UpdateSelectedCategoryIndex -> {
                 filters.update { it.copy(selectedCategoryIndex = event.index)}
             }
 
-            is HomeScreenEvent.UpdateCart -> {
+            is SharedEvent.UpdateCart -> {
                 viewModelScope.launch {
                     if(event.product.amountInCart == 0)
                         cart.deleteProduct(event.product.toCartEntity())
@@ -133,32 +135,32 @@ class HomeScreenViewModel @Inject constructor(
                 }
             }
 
-            is HomeScreenEvent.CloseBottomSheet -> {
+            is SharedEvent.CloseBottomSheet -> {
                 _state.update { it.copy(isEditingFilters = false) }
             }
 
-            is HomeScreenEvent.OpenBottomSheet -> {
+            is SharedEvent.OpenBottomSheet -> {
                 _state.update { it.copy(isEditingFilters = true) }
             }
 
-            is HomeScreenEvent.UpdateTags -> {
+            is SharedEvent.UpdateTags -> {
                 filters.update { it.copy(selectedTags = event.tags) }
             }
 
-            HomeScreenEvent.ShowSearchComponent -> {
+            SharedEvent.ShowSearchComponent -> {
                 _state.update { it.copy(isSearching = true) }
             }
 
-            HomeScreenEvent.HideSearchComponent -> {
+            SharedEvent.HideSearchComponent -> {
                 _state.update { it.copy(isSearching = false)}
                 filters.update { it.copy(searchQuery = "") }
             }
 
-            is HomeScreenEvent.IsSearching -> {
+            is SharedEvent.IsSearching -> {
                 filters.update { it.copy(searchQuery = event.searchQuery) }
             }
 
-            is HomeScreenEvent.UpdateSelectedProductId -> {
+            is SharedEvent.UpdateSelectedProductId -> {
                 filters.update { it.copy(selectedProductId = event.id) }
             }
         }

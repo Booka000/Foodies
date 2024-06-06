@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen.components
+package com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.DpOffset
 import com.albara.foodis.R
 import com.albara.foodis.buttonfilter.ButtonFilter
 import com.albara.foodis.buttonfilter.Indicator
-import com.albara.foodis.presentation.home_screen.HomeScreenEvent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedEvent
 import com.albara.foodis.presentation.ui.theme.Orange
 import com.albara.foodis.search.Search
 import com.albara.foodis.search.Typing
@@ -30,7 +30,7 @@ import com.albara.foodis.topline.Topline
 fun TopLineComponent(
     modifier: Modifier = Modifier,
     indicator: Int,
-    onEvent : (HomeScreenEvent) -> Unit
+    onEvent : (SharedEvent) -> Unit
 ) {
     Topline(
         modifier = modifier,
@@ -51,7 +51,7 @@ fun TopLineComponent(
                     )
                 },
                 onClick = {
-                    onEvent(HomeScreenEvent.OpenBottomSheet)
+                    onEvent(SharedEvent.OpenBottomSheet)
                 }
             )
         },
@@ -72,10 +72,10 @@ fun TopLineComponent(
             )
         },
         onFilterClick = {
-            onEvent(HomeScreenEvent.OpenBottomSheet)
+            onEvent(SharedEvent.OpenBottomSheet)
         },
         onSearchClick = {
-            onEvent(HomeScreenEvent.ShowSearchComponent)
+            onEvent(SharedEvent.ShowSearchComponent)
         }
 
     )
@@ -84,7 +84,7 @@ fun TopLineComponent(
 @Composable
 fun SearchComponent(
     modifier: Modifier = Modifier,
-    onEvent : (HomeScreenEvent) -> Unit
+    onEvent : (SharedEvent) -> Unit
 ) {
     var text by rememberSaveable {
         mutableStateOf("")
@@ -104,7 +104,7 @@ fun SearchComponent(
                 value = text,
                 onValueChange = {
                     text = it
-                    onEvent(HomeScreenEvent.IsSearching(text))
+                    onEvent(SharedEvent.IsSearching(text))
                 },
                 colors = TextFieldDefaults.colors().copy(
                     unfocusedContainerColor = Color.Transparent,
@@ -127,10 +127,10 @@ fun SearchComponent(
         },
         onCancelClick = {
             text = ""
-            onEvent(HomeScreenEvent.IsSearching(""))
+            onEvent(SharedEvent.IsSearching(""))
         },
         onArrowLeftClick = {
-            onEvent(HomeScreenEvent.HideSearchComponent)
+            onEvent(SharedEvent.HideSearchComponent)
         },
         backgroundColor = Color.Transparent
     )

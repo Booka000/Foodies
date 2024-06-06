@@ -13,9 +13,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
-import com.albara.foodis.presentation.home_screen.HomeScreen
-import com.albara.foodis.presentation.home_screen.HomeScreenViewModel
-import com.albara.foodis.presentation.product_details_screen.ProductDetailsScreen
+import com.albara.foodis.presentation.products_list_and_product_details_screens.product_details_screen.ProductDetailsScreen
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedViewModel
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.HomeScreen
 
 @Composable
 fun Navigation(){
@@ -26,7 +26,7 @@ fun Navigation(){
             route = Screen.LIST_AND_DETAILS_SCREENS_ROUTE
         ) {
             composable(Screen.HomeScreen.route) {entry ->
-                val viewModel = entry.sharedViewModel<HomeScreenViewModel>(navController = navController)
+                val viewModel = entry.sharedViewModel<SharedViewModel>(navController = navController)
                 val state by viewModel.state.collectAsState()
 
                 HomeScreen(state = state, onEvent = viewModel::onEvent) {
@@ -39,7 +39,7 @@ fun Navigation(){
             }
 
             composable(Screen.ProductDetailsScreen.route){entry ->
-                val viewModel = entry.sharedViewModel<HomeScreenViewModel>(navController = navController)
+                val viewModel = entry.sharedViewModel<SharedViewModel>(navController = navController)
                 val state by viewModel.state.collectAsState()
 
                 ProductDetailsScreen(

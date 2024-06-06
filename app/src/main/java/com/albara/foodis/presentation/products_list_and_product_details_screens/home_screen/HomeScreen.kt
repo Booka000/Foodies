@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen
+package com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
@@ -34,16 +34,18 @@ import androidx.compose.ui.unit.dp
 import com.albara.foodis.R
 import com.albara.foodis.buttonbasic.ButtonBasic
 import com.albara.foodis.buttonbasic.IconLeft
-import com.albara.foodis.presentation.home_screen.components.CategoriesSection
-import com.albara.foodis.presentation.home_screen.components.ItemCard
-import com.albara.foodis.presentation.home_screen.components.ModalBottomSheetComponent
-import com.albara.foodis.presentation.home_screen.components.SearchComponent
-import com.albara.foodis.presentation.home_screen.components.TopLineComponent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components.CategoriesSection
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components.ItemCard
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components.ModalBottomSheetComponent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components.SearchComponent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components.TopLineComponent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedEvent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedState
 
 @Composable
 fun HomeScreen(
-    state: HomeScreenState,
-    onEvent: (HomeScreenEvent) -> Unit,
+    state: SharedState,
+    onEvent: (SharedEvent) -> Unit,
     onNavigate : () -> Unit
 ){
     Box(
@@ -102,7 +104,7 @@ fun HomeScreen(
                             .fillMaxHeight(),
                         product = product){ event ->
                         onEvent(event)
-                        if(event is HomeScreenEvent.UpdateSelectedProductId)
+                        if(event is SharedEvent.UpdateSelectedProductId)
                             onNavigate()
                     }
                 }

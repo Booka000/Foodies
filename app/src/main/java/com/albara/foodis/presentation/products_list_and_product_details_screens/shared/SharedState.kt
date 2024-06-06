@@ -1,10 +1,10 @@
-package com.albara.foodis.presentation.home_screen
+package com.albara.foodis.presentation.products_list_and_product_details_screens.shared
 
 import com.albara.foodis.domain.modal.Category
 import com.albara.foodis.domain.modal.Product
 import com.albara.foodis.domain.modal.Tag
 
-data class HomeScreenState (
+data class SharedState (
     val products : List<Product> = emptyList(),
     val tags : List<Tag> = emptyList(),
     val categories : List<Category> = emptyList(),

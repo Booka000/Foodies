@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen.components
+package com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -28,18 +28,18 @@ import com.albara.foodis.itemcard.InCart
 import com.albara.foodis.itemcard.ItemCard
 import com.albara.foodis.itemtag.Itemtag
 import com.albara.foodis.itemtag.Type
-import com.albara.foodis.presentation.home_screen.HomeScreenEvent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedEvent
 import com.albara.foodis.presentation.ui.theme.Orange
 
 @Composable
 fun ItemCard(
     modifier: Modifier = Modifier,
     product: Product,
-    onEvent : (HomeScreenEvent) -> Unit
+    onEvent : (SharedEvent) -> Unit
 ) {
     ItemCard(
         modifier = modifier.clickable {
-            onEvent(HomeScreenEvent.UpdateSelectedProductId(product.id))
+            onEvent(SharedEvent.UpdateSelectedProductId(product.id))
         },
         inCart = if (product.amountInCart != 0) InCart.On else InCart.Off,
         itemName = product.name,
@@ -75,13 +75,13 @@ fun ItemCard(
         addToCardButton = {
             ButtonAddToCartComponent(modifier = Modifier.fillMaxSize(),
                 product = product) {product ->
-                onEvent(HomeScreenEvent.UpdateCart(product))
+                onEvent(SharedEvent.UpdateCart(product))
             }
         },
         counter = {
             CounterComponent(modifier = Modifier.fillMaxSize(),
                 product = product) {product ->
-                onEvent(HomeScreenEvent.UpdateCart(product))
+                onEvent(SharedEvent.UpdateCart(product))
             }
         }
     )

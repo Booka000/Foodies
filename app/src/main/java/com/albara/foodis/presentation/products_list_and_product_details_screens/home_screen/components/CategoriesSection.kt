@@ -1,4 +1,4 @@
-package com.albara.foodis.presentation.home_screen.components
+package com.albara.foodis.presentation.products_list_and_product_details_screens.home_screen.components
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -11,13 +11,13 @@ import com.albara.foodis.categories.Categories
 import com.albara.foodis.category.Category
 import com.albara.foodis.category.Property1
 import com.albara.foodis.domain.modal.Category
-import com.albara.foodis.presentation.home_screen.HomeScreenEvent
+import com.albara.foodis.presentation.products_list_and_product_details_screens.shared.SharedEvent
 
 @Composable
 fun CategoriesSection(
     modifier: Modifier = Modifier,
     categories : List<Category>,
-    onEvent : (HomeScreenEvent) -> Unit
+    onEvent : (SharedEvent) -> Unit
 ) {
     var selectedCategoryIndex by rememberSaveable {
         mutableIntStateOf(0)
@@ -30,7 +30,7 @@ fun CategoriesSection(
                     categoryName = category.name,
                     onClick = {
                         selectedCategoryIndex = index
-                        onEvent(HomeScreenEvent.UpdateSelectedCategoryIndex(index))
+                        onEvent(SharedEvent.UpdateSelectedCategoryIndex(index))
                     },
                     property1 = if (selectedCategoryIndex == index) Property1.On
                     else Property1.Off,
