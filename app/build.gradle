@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace 'com.albara.foodis'
+    namespace 'com.albara.foodies'
     compileSdk 34
 
     sourceSets {
@@ -21,7 +21,7 @@ android {
     }
 
         defaultConfig {
-        applicationId "com.albara.foodis"
+        applicationId "com.albara.foodies"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -72,6 +72,8 @@ android {
 
 dependencies {
 
+    implementation 'com.airbnb.android:lottie-compose:6.4.1'
+
     implementation 'androidx.core:core-ktx:1.13.0'
     implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.0')
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
@@ -115,4 +117,6 @@ dependencies {
 
     // Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:2.6.1"
+
+    implementation 'androidx.core:core-splashscreen:1.0.1'
 }
