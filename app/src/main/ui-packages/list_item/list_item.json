@@ -1,0 +1,159 @@
+{
+  "name": "list_item",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "41:6711",
+    "version": "5931955224",
+    "component-id": "8b0928c69a7c08669d4b9d1c6db427d39765444e"
+  },
+  "default": "ListItem",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "✏️ Label"
+      },
+      {
+        "type": "text",
+        "id": "✏️ Label1"
+      }
+    ],
+    "modes": {
+      "ListItem": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "top": 13.0,
+              "right": 16.0,
+              "bottom": 13.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": 1.0,
+            "stroke-alignment": "center",
+            "stroke-color": {
+              "alpha": 0.11764705882352941,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "✏️ Label",
+              "✏️ Label1"
+            ],
+            "item-spacing": 8.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "✏️ Label",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": "$nameTextColor",
+            "text-content": "$name",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.5
+          },
+          {
+            "id": "✏️ Label1",
+            "color": "$valueTextColor",
+            "text-content": "$value",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 16.0,
+            "line-height": 1.5
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "name": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "nameTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "value": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "valueTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "ListItem",
+      "size": {
+        "width": 105.0,
+        "height": 50.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "name": "Вес",
+        "nameTextColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "value": "400 г",
+        "valueTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
