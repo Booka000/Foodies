@@ -6,7 +6,7 @@
 
 A food delivery service app, it was built as a test task to apply for an internship. this is not a commercial project, the app doesn't provide any real services.
 
-you can read the task requirements (in Russian!) [here](https://gaganpreetkaurkalsi.netlify.app/)
+you can read the task requirements (in Russian!) [here]([https://gaganpreetkaurkalsi.netlify.app/](https://drive.google.com/drive/folders/1Y1YyDZQNJb4gCATksUgx8-nbWXyTnhnO))
 
 
 ## Run Locally
