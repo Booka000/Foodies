@@ -1,6 +1,5 @@
 
-![Logo](https://github.com/user-attachments/assets/277f9710-5e02-4a98-ab2e-52711bc46f0b)
-
+![Logo](![logo](https://github.com/user-attachments/assets/6f4461ac-2436-4d20-9c84-0420c4d8811e)
 
 # Foodies
 
