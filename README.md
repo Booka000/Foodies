@@ -1,4 +1,4 @@
-![logo](https://github.com/user-attachments/assets/6f4461ac-2436-4d20-9c84-0420c4d8811e)
+![logo](https://github.com/Booka000/Foodies/blob/Main/logo.gif)
 
 # Foodies
 
@@ -20,8 +20,11 @@ The API is totally opened and doesn't require any keys or authorization
 ## Screenshots
 
 <p align="center">
-  <img height="600px" width="300px" src="https://github.com/user-attachments/assets/662a268e-b77e-4c58-b128-b1a046348dd4" />
-  <img height="600px" width="300px" src="https://github.com/user-attachments/assets/2e9fa657-71dc-4c25-804b-34266eb1d4aa" />
-  <img height="600px" width="300px" src="https://github.com/user-attachments/assets/283a4f97-86d7-4dee-9885-001aca75092c" />
-  <img height="600px" width="300px" src="https://github.com/user-attachments/assets/9bb3406b-ac6d-43e3-ba33-5960149578f9" /> <br/>
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014527_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014541_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014552_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230230_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230237_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230245_com_albara_foodies_MainActivity.jpg" />
+<br/>
 </p>
