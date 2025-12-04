@@ -1,4 +1,4 @@
-![logo](https://github.com/Booka000/Foodies/blob/Main/logo.gif)
+![logo](https://github.com/Booka000/Foodies/blob/main/logo.gif)
 
 # Foodies
 
