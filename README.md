@@ -20,11 +20,11 @@ The API is totally opened and doesn't require any keys or authorization
 ## Screenshots
 
 <p align="center">
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014527_com_albara_foodies_MainActivity.jpg" />
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014541_com_albara_foodies_MainActivity.jpg" />
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241010_014552_com_albara_foodies_MainActivity.jpg" />
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230230_com_albara_foodies_MainActivity.jpg" />
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230237_com_albara_foodies_MainActivity.jpg" />
-  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/Main/screenshots/Screenshot_20241011_230245_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241010_014527_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241010_014541_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241010_014552_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241011_230230_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241011_230237_com_albara_foodies_MainActivity.jpg" />
+  <img height="600px" width="300px" src="https://github.com/Booka000/Foodies/blob/main/screenshots/Screenshot_20241011_230245_com_albara_foodies_MainActivity.jpg" />
 <br/>
 </p>
