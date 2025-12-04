@@ -1,0 +1,226 @@
+{
+  "name": "topline",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "SotaXfLUQ3GBHLavmaZeL3",
+    "node": "41:6405",
+    "version": "5780082480",
+    "component-id": "4caeb365e8144c8b14b05d5ce4342b901e03d34d"
+  },
+  "default": "Topline",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Button / Filter"
+      },
+      {
+        "type": "group",
+        "id": "Logo"
+      },
+      {
+        "type": "group",
+        "id": "Button / Search"
+      }
+    ],
+    "modes": {
+      "Topline": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 8.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Button / Filter",
+              "Logo",
+              "Button / Search"
+            ],
+            "background-color": "$Topline background color",
+            "clip-content": false
+          },
+          {
+            "id": "Button / Filter",
+            "tap-handler": "$onFilterClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "arrangement": "row",
+            "children": "$filterIcon",
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Logo",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            },
+            "is-structured": false,
+            "children": "$logo",
+            "clip-content": false
+          },
+          {
+            "id": "Button / Search",
+            "padding": 10.0,
+            "tap-handler": "$onSearchClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": "$searchIcon",
+            "item-spacing": 8.0,
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Topline background color": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "filterIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onFilterClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "logo": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "searchIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onSearchClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Topline",
+      "size": {
+        "width": 375.0,
+        "height": 60.0
+      },
+      "parameters": {
+        "Topline background color": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "filterIcon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "clip-content": false
+          }
+        ],
+        "logo": [
+          {
+            "type": "vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.169952392578125
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 110.66009521484375
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            },
+            "vector-content": "logo.svg"
+          }
+        ],
+        "searchIcon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

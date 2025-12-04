@@ -1,0 +1,203 @@
+{
+  "name": "categories",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "vLw7KXjwhommYXI38bO8zi",
+    "node": "4:107",
+    "version": "5649073434",
+    "component-id": "747fc8c6c700e2b0c458ad009daffcfe7915ff07"
+  },
+  "default": "Categories",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      }
+    ],
+    "modes": {
+      "Categories": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "right": 16.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": "$Items",
+            "item-spacing": 8.0,
+            "scrollable": true,
+            "background-color": "$Categories background color"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Items": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "Categories background color": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Categories",
+      "size": {
+        "width": 375.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "Items": [
+          {
+            "type": "adin_component",
+            "key": "category",
+            "category name": "Роллы",
+            "text color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "type": "adin_component",
+            "key": "category",
+            "design": "Property 1=Off",
+            "category name": "Суши",
+            "text color": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "type": "adin_component",
+            "key": "category",
+            "design": "Property 1=Off",
+            "category name": "Наборы",
+            "text color": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "type": "adin_component",
+            "key": "category",
+            "design": "Property 1=Off",
+            "category name": "Горячие блюда",
+            "text color": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "type": "adin_component",
+            "key": "category",
+            "design": "Property 1=Off",
+            "category name": "Супы",
+            "text color": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          },
+          {
+            "type": "adin_component",
+            "key": "category",
+            "design": "Property 1=Off",
+            "category name": "Десерты",
+            "text color": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          }
+        ],
+        "Categories background color": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

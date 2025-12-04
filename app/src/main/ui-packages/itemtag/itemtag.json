@@ -1,0 +1,536 @@
+{
+  "name": "itemtag",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "vLw7KXjwhommYXI38bO8zi",
+    "node": "94:215",
+    "version": "5659779782",
+    "component-id": "0e8d9b8df948a6f3f8461adfbee9ed41abc92a39"
+  },
+  "default": "Type=Discount",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      }
+    ],
+    "modes": {
+      "Type=Discount": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 5.0,
+              "top": 2.0,
+              "right": 5.0,
+              "bottom": 2.0
+            },
+            "border-radius": 50.0,
+            "arrangement": "row",
+            "children": "$icon",
+            "item-spacing": 10.0,
+            "fills": [
+              {
+                "color": {},
+                "opacity": 1.0,
+                "fill-type": "lineargradient",
+                "blend-mode": "normal",
+                "color-stops": [
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 219.84375,
+                      "saturation": 0.5289256198347108,
+                      "value": 0.9490196078431372
+                    },
+                    "color-stop-position": 0.0
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 269.67741935483866,
+                      "saturation": 0.4793814432989691,
+                      "value": 0.7607843137254902
+                    },
+                    "color-stop-position": 0.62
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 259.2857142857143,
+                      "saturation": 0.7724137931034483,
+                      "value": 0.5686274509803921
+                    },
+                    "color-stop-position": 1.0
+                  }
+                ],
+                "gradient-handle-positions": [
+                  {
+                    "x": 0.0,
+                    "y": 0.0
+                  },
+                  {
+                    "x": 1.0,
+                    "y": 1.03
+                  },
+                  {
+                    "x": -0.51,
+                    "y": 1.89
+                  }
+                ]
+              }
+            ],
+            "clip-content": false
+          }
+        ]
+      },
+      "Type=Spicy": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 5.0,
+              "top": 2.0,
+              "right": 5.0,
+              "bottom": 2.0
+            },
+            "border-radius": 50.0,
+            "arrangement": "row",
+            "children": "$icon",
+            "item-spacing": 10.0,
+            "fills": [
+              {
+                "color": {},
+                "opacity": 1.0,
+                "fill-type": "lineargradient",
+                "blend-mode": "normal",
+                "color-stops": [
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 25.11627906976744,
+                      "saturation": 0.8634538152610443,
+                      "value": 0.9764705882352941
+                    },
+                    "color-stop-position": 0.0
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 13.090909090909093,
+                      "saturation": 0.88,
+                      "value": 0.9803921568627451
+                    },
+                    "color-stop-position": 0.62
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 13.064516129032258,
+                      "saturation": 1.0,
+                      "value": 0.9725490196078431
+                    },
+                    "color-stop-position": 1.0
+                  }
+                ],
+                "gradient-handle-positions": [
+                  {
+                    "x": 0.0,
+                    "y": 0.0
+                  },
+                  {
+                    "x": 1.0,
+                    "y": 1.03
+                  },
+                  {
+                    "x": -0.51,
+                    "y": 1.89
+                  }
+                ]
+              }
+            ],
+            "clip-content": false
+          }
+        ]
+      },
+      "Type=Vegan": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 5.0,
+              "top": 2.0,
+              "right": 5.0,
+              "bottom": 2.0
+            },
+            "border-radius": 50.0,
+            "arrangement": "row",
+            "children": "$icon",
+            "item-spacing": 10.0,
+            "fills": [
+              {
+                "color": {},
+                "opacity": 1.0,
+                "fill-type": "lineargradient",
+                "blend-mode": "normal",
+                "color-stops": [
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 25.11627906976744,
+                      "saturation": 0.8634538152610443,
+                      "value": 0.9764705882352941
+                    },
+                    "color-stop-position": 0.0
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 13.090909090909093,
+                      "saturation": 0.88,
+                      "value": 0.9803921568627451
+                    },
+                    "color-stop-position": 0.62
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 13.064516129032258,
+                      "saturation": 1.0,
+                      "value": 0.9725490196078431
+                    },
+                    "color-stop-position": 1.0
+                  }
+                ],
+                "gradient-handle-positions": [
+                  {
+                    "x": 0.0,
+                    "y": 0.0
+                  },
+                  {
+                    "x": 1.0,
+                    "y": 1.03
+                  },
+                  {
+                    "x": -0.51,
+                    "y": 1.89
+                  }
+                ]
+              },
+              {
+                "color": {},
+                "opacity": 1.0,
+                "fill-type": "lineargradient",
+                "blend-mode": "normal",
+                "color-stops": [
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 86.88,
+                      "saturation": 0.5580357142857143,
+                      "value": 0.8784313725490196
+                    },
+                    "color-stop-position": 0.0
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 100.93023255813952,
+                      "saturation": 0.6789473684210526,
+                      "value": 0.7450980392156863
+                    },
+                    "color-stop-position": 0.62
+                  },
+                  {
+                    "color": {
+                      "alpha": 1.0,
+                      "hue": 101.12903225806451,
+                      "saturation": 0.7251461988304093,
+                      "value": 0.6705882352941176
+                    },
+                    "color-stop-position": 1.0
+                  }
+                ],
+                "gradient-handle-positions": [
+                  {
+                    "x": 0.0,
+                    "y": 0.0
+                  },
+                  {
+                    "x": 1.0,
+                    "y": 1.03
+                  },
+                  {
+                    "x": -0.51,
+                    "y": 1.89
+                  }
+                ]
+              }
+            ],
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "icon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Type=Discount",
+      "size": {
+        "width": 24.0,
+        "height": 24.0
+      },
+      "parameters": {
+        "icon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "group",
+                "presence": false,
+                "margin": {
+                  "left": 1.20001220703125,
+                  "top": 1.20001220703125,
+                  "right": 1.1999874114990234,
+                  "bottom": 1.1999874114990234
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": 1.1759033203125,
+                      "top": 0.1092529296875,
+                      "right": 1.1759748458862305,
+                      "bottom": 0.10709571838378906
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": 1.07025146484375,
+                      "right": 1.0716314315795898
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": 0.105010986328125,
+                      "top": 0.10919189453125,
+                      "right": 5.983136177062988,
+                      "bottom": 5.985280990600586
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "top": 0.0023193359375,
+                      "right": 5.87814736366272,
+                      "bottom": 5.883221387863159
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": 5.983123779296875,
+                      "top": 5.98846435546875,
+                      "right": 0.10502338409423828,
+                      "bottom": 0.10600757598876953
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": 5.878143310546875,
+                      "top": 5.88153076171875,
+                      "right": 0.000004291534423828125,
+                      "bottom": 0.004010200500488281
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    }
+                  }
+                ],
+                "clip-content": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "design": "Type=Spicy",
+      "size": {
+        "width": 24.0,
+        "height": 24.0
+      },
+      "parameters": {
+        "icon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "vector",
+                "presence": false,
+                "margin": {
+                  "left": 2.399993896484375,
+                  "right": 2.2761435508728027,
+                  "bottom": 0.23999977111816406
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "design": "Type=Vegan",
+      "size": {
+        "width": 24.0,
+        "height": 24.0
+      },
+      "parameters": {
+        "icon": [
+          {
+            "type": "group",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 12.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              {
+                "type": "vector",
+                "presence": false,
+                "margin": {
+                  "left": 1.20001220703125,
+                  "top": 0.5999755859375,
+                  "right": 1.0983219146728516,
+                  "bottom": 0.6000251770019531
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

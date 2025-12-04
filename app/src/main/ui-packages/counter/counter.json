@@ -1,0 +1,551 @@
+{
+  "name": "counter",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "33:12148",
+    "version": "6295711328",
+    "component-id": "b88db2d5a9e6ed0e7ba3cb802dd8c54bae01b467"
+  },
+  "default": "Type=ItemCard",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Button / Minus"
+      },
+      {
+        "type": "text",
+        "id": "100"
+      },
+      {
+        "type": "group",
+        "id": "Button / Plus"
+      },
+      {
+        "type": "group",
+        "id": "Minus"
+      },
+      {
+        "type": "group",
+        "id": "Plus"
+      },
+      {
+        "type": "text",
+        "id": "1"
+      },
+      {
+        "type": "group",
+        "id": "Plus1"
+      },
+      {
+        "type": "vector",
+        "id": "Icon2"
+      }
+    ],
+    "modes": {
+      "Type=ItemCard": {
+        "rules": [
+          {
+            "id": "top_level",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Button / Minus",
+              "100",
+              "Button / Plus"
+            ],
+            "item-spacing": 12.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Button / Minus",
+            "padding": 8.0,
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onMinusButtonClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Minus"
+            ],
+            "item-spacing": 10.0,
+            "background-color": "$minusButtonBackgroundColor"
+          },
+          {
+            "id": "100",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 500.0,
+            "color": "$itemCardCounterColor",
+            "text-content": "$itemCardCounter",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 16.0
+          },
+          {
+            "id": "Button / Plus",
+            "padding": 8.0,
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onPlusButtonClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Plus"
+            ],
+            "item-spacing": 10.0,
+            "background-color": "$plusButtonBackgroudColor"
+          },
+          {
+            "id": "Minus",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$minusIcon",
+            "clip-content": false
+          },
+          {
+            "id": "Plus",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$plusIcon",
+            "clip-content": false
+          }
+        ]
+      },
+      "Type=Cart": {
+        "rules": [
+          {
+            "id": "top_level",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Button / Minus",
+              "1",
+              "Button / Plus"
+            ],
+            "item-spacing": 8.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Button / Minus",
+            "padding": 10.0,
+            "border-radius": 8.0,
+            "tap-handler": "$onMinusButtonClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Minus"
+            ],
+            "item-spacing": 10.0,
+            "background-color": "$minusButtonBackgroundColor"
+          },
+          {
+            "id": "1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 31.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 500.0,
+            "color": "$cartCounterColor",
+            "text-content": "$cartCounter",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 16.0
+          },
+          {
+            "id": "Button / Plus",
+            "padding": 10.0,
+            "border-radius": 8.0,
+            "tap-handler": "$onPlusButtonClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Plus",
+              "Plus1"
+            ],
+            "item-spacing": 10.0,
+            "background-color": "$plusButtonBackgroudColor"
+          },
+          {
+            "id": "Minus",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$minusIcon",
+            "clip-content": false
+          },
+          {
+            "id": "Plus",
+            "presence": false,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$plusIcon",
+            "clip-content": false
+          },
+          {
+            "id": "Plus1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Icon2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Icon2",
+            "margin": 4.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon3.svg"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "minusButtonBackgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "onMinusButtonClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "itemCardCounter": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "itemCardCounterColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "plusButtonBackgroudColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "onPlusButtonClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "minusIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "plusIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "cartCounter": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "cartCounterColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Type=ItemCard",
+      "size": {
+        "width": 148.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "minusButtonBackgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "itemCardCounter": "100",
+        "itemCardCounterColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "plusButtonBackgroudColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "minusIcon": [
+          {
+            "type": "vector",
+            "margin": {
+              "left": 4.0,
+              "top": 11.0,
+              "right": 4.000001907348633,
+              "bottom": 11.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon.svg"
+          }
+        ],
+        "plusIcon": [
+          {
+            "type": "vector",
+            "margin": 4.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon1.svg"
+          }
+        ],
+        "cartCounter": "1",
+        "cartCounterColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "design": "Type=Cart",
+      "size": {
+        "width": 135.0,
+        "height": 44.0
+      },
+      "parameters": {
+        "itemCardCounter": "100",
+        "itemCardCounterColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "minusIcon": [
+          {
+            "type": "vector",
+            "margin": {
+              "left": 4.0,
+              "top": 11.0,
+              "right": 4.000001907348633,
+              "bottom": 11.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon2.svg"
+          }
+        ],
+        "plusIcon": [
+          {
+            "type": "vector",
+            "margin": 4.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          }
+        ],
+        "cartCounter": "1",
+        "cartCounterColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

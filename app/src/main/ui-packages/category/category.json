@@ -1,0 +1,167 @@
+{
+  "name": "category",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "vLw7KXjwhommYXI38bO8zi",
+    "node": "4:117",
+    "version": "5649073434",
+    "component-id": "fd633ea226c058a56a3e751fb1cb90f8d6fb143b"
+  },
+  "default": "Property 1=On",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Label"
+      }
+    ],
+    "modes": {
+      "Property 1=On": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "top": 12.0,
+              "right": 16.0,
+              "bottom": 12.0
+            },
+            "border-radius": 8.0,
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Label"
+            ],
+            "item-spacing": 8.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 17.757847533632287,
+              "saturation": 0.9253112033195021,
+              "value": 0.9450980392156862
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Label",
+            "font-weight": 500.0,
+            "color": "$text color",
+            "text-content": "$category name",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          }
+        ]
+      },
+      "Property 1=Off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "top": 12.0,
+              "right": 16.0,
+              "bottom": 12.0
+            },
+            "border-radius": 8.0,
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Label"
+            ],
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Label",
+            "font-weight": 500.0,
+            "color": "$text color",
+            "text-content": "$category name",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "category name": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "text color": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Property 1=On",
+      "size": {
+        "width": 71.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "category name": "Label",
+        "text color": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "design": "Property 1=Off",
+      "size": {
+        "width": 71.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "category name": "Label",
+        "text color": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

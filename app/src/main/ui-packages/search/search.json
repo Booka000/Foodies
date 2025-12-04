@@ -1,0 +1,348 @@
+{
+  "name": "search",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "43:9319",
+    "version": "5790186246",
+    "component-id": "63ee39eeb28f33cb5a1d918f7227505f2b08a507"
+  },
+  "default": "typing=Off",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "ArrowLeft"
+      },
+      {
+        "type": "group",
+        "id": "TextField"
+      },
+      {
+        "type": "group",
+        "id": "cancel"
+      }
+    ],
+    "modes": {
+      "typing=Off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "right": 16.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "ArrowLeft",
+              "TextField"
+            ],
+            "item-spacing": 16.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "ArrowLeft",
+            "tap-handler": "$onArrowLeftClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$arrowLeftIcon",
+            "clip-content": false
+          },
+          {
+            "id": "TextField",
+            "padding": {
+              "left": 10.0,
+              "right": 10.0
+            },
+            "border-radius": 8.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 24.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": "$textfiled",
+            "item-spacing": 10.0
+          }
+        ]
+      },
+      "typing=on": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "right": 16.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "ArrowLeft",
+              "TextField",
+              "cancel"
+            ],
+            "item-spacing": 16.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "ArrowLeft",
+            "tap-handler": "$onArrowLeftClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$arrowLeftIcon",
+            "clip-content": false
+          },
+          {
+            "id": "TextField",
+            "border-radius": 8.0,
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": "$textfiled",
+            "item-spacing": 10.0
+          },
+          {
+            "id": "cancel",
+            "tap-handler": "$onCancelClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$cancelIcon",
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "arrowLeftIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onArrowLeftClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "textfiled": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "cancelIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onCancelClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "typing=Off",
+      "size": {
+        "width": 371.0,
+        "height": 24.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "arrowLeftIcon": [
+          {
+            "type": "vector",
+            "margin": {
+              "left": 2.0,
+              "top": 4.0,
+              "right": 2.0,
+              "bottom": 4.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon.svg"
+          }
+        ],
+        "cancelIcon": [
+          {
+            "type": "vector",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "type": "vector",
+            "margin": 2.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          }
+        ]
+      }
+    },
+    {
+      "design": "typing=on",
+      "size": {
+        "width": 371.0,
+        "height": 24.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "arrowLeftIcon": [
+          {
+            "type": "vector",
+            "margin": {
+              "left": 2.0,
+              "top": 4.0,
+              "right": 2.0,
+              "bottom": 4.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "icon1.svg"
+          }
+        ],
+        "cancelIcon": [
+          {
+            "type": "vector",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "type": "vector",
+            "margin": 2.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

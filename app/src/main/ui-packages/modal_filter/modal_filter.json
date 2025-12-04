@@ -1,0 +1,229 @@
+{
+  "name": "modal_filter",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "qiWqVfhN7MXQRPjz6sgZM8",
+    "node": "41:6406",
+    "version": "5761267231",
+    "component-id": "f926a53a4451b0b06ea8ebfe91e37ecff3f06c1f"
+  },
+  "default": "Modal / Filter",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Body"
+      },
+      {
+        "type": "text",
+        "id": "Title"
+      },
+      {
+        "type": "group",
+        "id": "FilterList"
+      },
+      {
+        "type": "group",
+        "id": "applyButton"
+      }
+    ],
+    "modes": {
+      "Modal / Filter": {
+        "rules": [
+          {
+            "id": "top_level",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "children": [
+              "Body"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Body",
+            "padding": {
+              "left": 24.0,
+              "top": 32.0,
+              "right": 24.0,
+              "bottom": 32.0
+            },
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.047058823529411764,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 8.0,
+              "offset-x": 0.0,
+              "offset-y": -4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 375.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "children": [
+              "Title",
+              "FilterList",
+              "applyButton"
+            ],
+            "item-spacing": 16.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Title",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 327.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 500.0,
+            "color": "$titleColor",
+            "text-content": "$title",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 20.0,
+            "letter-spacing": 0.15000000596046448,
+            "line-height": 1.2
+          },
+          {
+            "id": "FilterList",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 327.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink",
+                "min": 44.0
+              }
+            },
+            "children": "$filters",
+            "clip-content": false
+          },
+          {
+            "id": "applyButton",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 48.0
+              }
+            },
+            "is-structured": false,
+            "children": "$applyButton",
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "title": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "titleColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "filters": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "applyButton": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Modal / Filter",
+      "size": {
+        "width": 375.0,
+        "height": 212.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "title": "Подобрать блюда",
+        "titleColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "applyButton": [
+          {
+            "type": "vector",
+            "presence": false,
+            "alignment": {
+              "horizontal": {
+                "attachment": "center",
+                "offset": -0.169952392578125
+              },
+              "vertical": {
+                "attachment": "center",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 110.66009521484375
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

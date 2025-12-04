@@ -1,0 +1,712 @@
+{
+  "name": "item_card",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "33:12067",
+    "version": "5752723549",
+    "component-id": "7757426e875c603b4f389f81292456edbdb0456c"
+  },
+  "default": "In cart=Off",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "ImageContainter"
+      },
+      {
+        "type": "group",
+        "id": "Body"
+      },
+      {
+        "type": "group",
+        "id": "Title"
+      },
+      {
+        "type": "group",
+        "id": "Button / AddToCart"
+      },
+      {
+        "type": "text",
+        "id": "Name"
+      },
+      {
+        "type": "text",
+        "id": "Weight"
+      },
+      {
+        "type": "group",
+        "id": "Counter"
+      }
+    ],
+    "modes": {
+      "In cart=Off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 8.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "ImageContainter",
+              "Body"
+            ],
+            "item-spacing": 12.0,
+            "background-color": "$containerColor",
+            "clip-content": false
+          },
+          {
+            "id": "ImageContainter",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 170.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 170.0
+              }
+            },
+            "is-structured": false,
+            "children": "$ImageAndTags"
+          },
+          {
+            "id": "Body",
+            "padding": {
+              "left": 12.0,
+              "right": 12.0,
+              "bottom": 12.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "Title",
+              "Button / AddToCart"
+            ],
+            "item-spacing": 12.0,
+            "clip-content": false
+          },
+          {
+            "id": "Title",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Name",
+              "Weight"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Button / AddToCart",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            },
+            "children": "$addToCardButton",
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Name",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              }
+            },
+            "color": "$itemNameColor",
+            "text-content": "$itemName",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "Weight",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": "$itemWeightColor",
+            "text-content": "$itemWeight",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-align-vertical": "bottom",
+            "line-height": 1.4285714721679688
+          }
+        ]
+      },
+      "In cart=On": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 8.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "ImageContainter",
+              "Body"
+            ],
+            "item-spacing": 12.0,
+            "background-color": "$containerColor",
+            "clip-content": false
+          },
+          {
+            "id": "ImageContainter",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 170.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 170.0
+              }
+            },
+            "is-structured": false,
+            "children": "$ImageAndTags"
+          },
+          {
+            "id": "Body",
+            "padding": {
+              "left": 12.0,
+              "right": 12.0,
+              "bottom": 12.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "Title",
+              "Counter"
+            ],
+            "item-spacing": 12.0,
+            "clip-content": false
+          },
+          {
+            "id": "Title",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Name",
+              "Weight"
+            ],
+            "item-spacing": 4.0,
+            "clip-content": false
+          },
+          {
+            "id": "Counter",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            },
+            "children": "$counter",
+            "item-spacing": 12.0,
+            "clip-content": false
+          },
+          {
+            "id": "Name",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 60.0
+              }
+            },
+            "color": "$itemNameColor",
+            "text-content": "$itemName",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "Weight",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": "$itemWeightColor",
+            "text-content": "$itemWeight",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-align-vertical": "bottom",
+            "line-height": 1.4285714721679688
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "containerColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "ImageAndTags": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "addToCardButton": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "itemName": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "itemNameColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "itemWeight": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "itemWeightColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "counter": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "In cart=Off",
+      "size": {
+        "width": 170.0,
+        "height": 334.0
+      },
+      "parameters": {
+        "containerColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.9607843137254902
+        },
+        "ImageAndTags": [
+          {
+            "type": "vector",
+            "presence": false,
+            "margin": {
+              "left": 17.0,
+              "top": 8.5,
+              "right": 15.559738159179688,
+              "bottom": 8.5
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          }
+        ],
+        "addToCardButton": [
+          {
+            "type": "adin_component",
+            "key": "button_add_to_cart",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "buttonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "price": "480 ₽",
+            "priceTextColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ],
+        "itemName": "Название блюда ",
+        "itemNameColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "itemWeight": "500 г",
+        "itemWeightColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "counter": [
+          {
+            "type": "adin_component",
+            "key": "counter",
+            "minusButtonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "itemCardCounter": "100",
+            "itemCardCounterColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "plusButtonBackgroudColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "minusIcon": [
+              {
+                "type": "vector",
+                "margin": {
+                  "left": 4.0,
+                  "top": 11.0,
+                  "right": 4.000001907348633,
+                  "bottom": 11.0
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon.svg"
+              }
+            ],
+            "plusIcon": [
+              {
+                "type": "vector",
+                "margin": 4.0,
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon1.svg"
+              }
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "design": "In cart=On",
+      "size": {
+        "width": 170.0,
+        "height": 334.0
+      },
+      "parameters": {
+        "containerColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.9607843137254902
+        },
+        "ImageAndTags": [
+          {
+            "type": "vector",
+            "presence": false,
+            "margin": {
+              "left": 17.0,
+              "top": 8.5,
+              "right": 15.559738159179688,
+              "bottom": 8.5
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          }
+        ],
+        "addToCardButton": [
+          {
+            "type": "adin_component",
+            "key": "button_add_to_cart",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "buttonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "price": "480 ₽",
+            "priceTextColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ],
+        "itemName": "Название блюда",
+        "itemNameColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "itemWeight": "500 г",
+        "itemWeightColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "counter": [
+          {
+            "type": "adin_component",
+            "key": "counter",
+            "minusButtonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "itemCardCounter": "100",
+            "itemCardCounterColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "plusButtonBackgroudColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "minusIcon": [
+              {
+                "type": "vector",
+                "margin": {
+                  "left": 4.0,
+                  "top": 11.0,
+                  "right": 4.000001907348633,
+                  "bottom": 11.0
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon.svg"
+              }
+            ],
+            "plusIcon": [
+              {
+                "type": "vector",
+                "margin": 4.0,
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon1.svg"
+              }
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 44.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

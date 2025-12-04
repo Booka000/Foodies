@@ -1,0 +1,271 @@
+{
+  "name": "button_add_to_cart",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "33:12061",
+    "version": "5752723549",
+    "component-id": "645814c846d72e94d4f3ea3002a16d8585048421"
+  },
+  "default": "Discount=off",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Price"
+      },
+      {
+        "type": "text",
+        "id": "PriceBefore"
+      }
+    ],
+    "modes": {
+      "Discount=off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 12.0,
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Price"
+            ],
+            "item-spacing": 8.0,
+            "background-color": "$buttonBackgroundColor"
+          },
+          {
+            "id": "Price",
+            "font-weight": 500.0,
+            "color": "$priceTextColor",
+            "text-content": "$price",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          }
+        ]
+      },
+      "Discount=on": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "top": 12.0,
+              "right": 16.0,
+              "bottom": 12.0
+            },
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Price",
+              "PriceBefore"
+            ],
+            "item-spacing": 8.0,
+            "background-color": "$buttonBackgroundColor"
+          },
+          {
+            "id": "Price",
+            "font-weight": 500.0,
+            "color": "$priceTextColor",
+            "text-content": "$price",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          },
+          {
+            "id": "PriceBefore",
+            "color": "$priceBeforeTextColor",
+            "text-content": "$priceBefore",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "line-height": 1.1428571319580079,
+            "strikethrough": true
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "buttonBackgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "onClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "price": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "priceTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "priceBefore": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "priceBeforeTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "ambients": {
+    "md2.sys.color.surface": {
+      "data-type": "color",
+      "description": null
+    },
+    "md2.sys.color.on-surface": {
+      "data-type": "color",
+      "description": null
+    }
+  },
+  "previews": [
+    {
+      "design": "Discount=off",
+      "size": {
+        "width": 67.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "buttonBackgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "price": "480 ₽",
+        "priceTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "priceBefore": "480 ₽",
+        "priceBeforeTextColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "design": "Discount=on",
+      "size": {
+        "width": 120.0,
+        "height": 40.0
+      },
+      "parameters": {
+        "buttonBackgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "price": "480 ₽",
+        "priceTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "priceBefore": "480 ₽",
+        "priceBeforeTextColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "md2.sys.color.on-surface": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

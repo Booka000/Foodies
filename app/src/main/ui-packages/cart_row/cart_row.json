@@ -1,0 +1,642 @@
+{
+  "name": "cart_row",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "33:12112",
+    "version": "6256406376",
+    "component-id": "fe7af35dbd3a34582b680aaa37c6730944d764f6"
+  },
+  "default": "Discount=On",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "image",
+        "id": "Photo"
+      },
+      {
+        "type": "group",
+        "id": "Frame 2404"
+      },
+      {
+        "type": "text",
+        "id": "Name"
+      },
+      {
+        "type": "group",
+        "id": "Footer"
+      },
+      {
+        "type": "group",
+        "id": "Counter"
+      },
+      {
+        "type": "group",
+        "id": "Price"
+      },
+      {
+        "type": "text",
+        "id": "Number"
+      },
+      {
+        "type": "text",
+        "id": "PriceBefore"
+      }
+    ],
+    "modes": {
+      "Discount=On": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": 1.0,
+            "stroke-color": {
+              "alpha": 0.11764705882352941,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Photo",
+              "Frame 2404"
+            ],
+            "item-spacing": 16.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Photo",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 96.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 96.0
+              }
+            },
+            "image-content": "$productImage",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 2404",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Name",
+              "Footer"
+            ],
+            "item-spacing": 12.0,
+            "clip-content": false
+          },
+          {
+            "id": "Name",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": "$productNameTextColor",
+            "text-content": "$productName",
+            "overflow": "ellipsis",
+            "max-lines": -1,
+            "text-align": "left",
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "Footer",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Counter",
+              "Price"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "Counter",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": "$Counter children",
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Price",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "cross-axis-align": "end",
+            "children": [
+              "Number",
+              "PriceBefore"
+            ],
+            "item-spacing": 2.0,
+            "clip-content": false
+          },
+          {
+            "id": "Number",
+            "font-weight": 500.0,
+            "color": "$productPriceTextColor",
+            "text-content": "$productPrice",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": 16.0,
+            "line-height": 1.5
+          },
+          {
+            "id": "PriceBefore",
+            "color": "$productOldPriceTextColor",
+            "text-content": "$productOldPrice",
+            "overflow": "visible",
+            "text-align": "right",
+            "text-align-vertical": "center",
+            "line-height": 1.4285714721679688,
+            "strikethrough": true
+          }
+        ]
+      },
+      "Discount=Off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "stroke-width": 1.0,
+            "stroke-color": {
+              "alpha": 0.11764705882352941,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Photo",
+              "Frame 2404"
+            ],
+            "item-spacing": 16.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Photo",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 96.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 96.0
+              }
+            },
+            "image-content": "$productImage",
+            "scale": "cover"
+          },
+          {
+            "id": "Frame 2404",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "cross-axis-align": "start",
+            "children": [
+              "Name",
+              "Footer"
+            ],
+            "item-spacing": 12.0,
+            "clip-content": false
+          },
+          {
+            "id": "Name",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": "$productNameTextColor",
+            "text-content": "$productName",
+            "overflow": "ellipsis",
+            "max-lines": -1,
+            "text-align": "left",
+            "line-height": 1.4285714721679688
+          },
+          {
+            "id": "Footer",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Counter",
+              "Price"
+            ],
+            "item-spacing": 16.0,
+            "clip-content": false
+          },
+          {
+            "id": "Counter",
+            "opacity": 100.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": "$Counter children",
+            "item-spacing": 8.0,
+            "clip-content": false
+          },
+          {
+            "id": "Price",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "cross-axis-align": "end",
+            "children": [
+              "Number"
+            ],
+            "item-spacing": 2.0,
+            "clip-content": false
+          },
+          {
+            "id": "Number",
+            "font-weight": 500.0,
+            "color": "$productPriceTextColor",
+            "text-content": "$productPrice",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": 16.0,
+            "line-height": 1.5
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "productImage": {
+      "data-type": "image",
+      "required": false,
+      "description": ""
+    },
+    "productName": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "productNameTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "Counter children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "productPrice": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "productPriceTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "productOldPrice": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "productOldPriceTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Discount=On",
+      "size": {
+        "width": 375.0,
+        "height": 130.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "productImage": "photo.png",
+        "productName": "Пицца с ветчиной и грибами\n32 см",
+        "productNameTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "Counter children": [
+          {
+            "type": "adin_component",
+            "key": "counter",
+            "design": "Type=Cart",
+            "minusButtonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9607843137254902
+            },
+            "plusButtonBackgroudColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9607843137254902
+            },
+            "minusIcon": [
+              {
+                "type": "vector",
+                "margin": {
+                  "left": 4.0,
+                  "top": 11.000007629394531,
+                  "right": 4.000001907348633,
+                  "bottom": 10.999992370605469
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon.svg"
+              }
+            ],
+            "plusIcon": [
+              {
+                "type": "vector",
+                "margin": 4.0,
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                }
+              }
+            ],
+            "cartCounter": "1",
+            "cartCounterColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          }
+        ],
+        "productPrice": "480 ₽",
+        "productPriceTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "productOldPrice": "560 ₽",
+        "productOldPriceTextColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "design": "Discount=Off",
+      "size": {
+        "width": 375.0,
+        "height": 128.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "productImage": "photo.png",
+        "productName": "Пицца с ветчиной и грибами\n32 см",
+        "productNameTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "Counter children": [
+          {
+            "type": "adin_component",
+            "key": "counter",
+            "design": "Type=Cart",
+            "minusButtonBackgroundColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9607843137254902
+            },
+            "plusButtonBackgroudColor": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9607843137254902
+            },
+            "minusIcon": [
+              {
+                "type": "vector",
+                "margin": {
+                  "left": 4.0,
+                  "top": 11.0,
+                  "right": 4.000001907348633,
+                  "bottom": 11.0
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "vector-content": "icon2.svg"
+              }
+            ],
+            "plusIcon": [
+              {
+                "type": "vector",
+                "margin": 4.0,
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                }
+              }
+            ],
+            "cartCounter": "1",
+            "cartCounterColor": {
+              "alpha": 0.8666666666666667,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            }
+          }
+        ],
+        "productPrice": "480 ₽",
+        "productPriceTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        },
+        "productOldPrice": "560 ₽",
+        "productOldPriceTextColor": {
+          "alpha": 0.6,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

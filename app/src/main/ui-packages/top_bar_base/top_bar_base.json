@@ -1,0 +1,229 @@
+{
+  "name": "top_bar_base",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8oJWPD01w9gJVyjmT9ROVO",
+    "node": "41:5415",
+    "version": "6253442932",
+    "component-id": "5aee56d92b40eace59e3d8b00ad84050ed05ef98"
+  },
+  "default": "TopBar Base",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "Frame 1739"
+      },
+      {
+        "type": "group",
+        "id": "Left"
+      },
+      {
+        "type": "group",
+        "id": "Icons / ArrowBack"
+      },
+      {
+        "type": "text",
+        "id": "Title"
+      }
+    ],
+    "modes": {
+      "TopBar Base": {
+        "rules": [
+          {
+            "id": "top_level",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.047058823529411764,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -5.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "Frame 1739"
+            ]
+          },
+          {
+            "id": "Frame 1739",
+            "padding": {
+              "left": 16.0,
+              "right": 16.0
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 56.0
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Left"
+            ],
+            "item-spacing": 24.0,
+            "background-color": "$backgroundColor",
+            "clip-content": false
+          },
+          {
+            "id": "Left",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "main-axis-align": "start",
+            "children": [
+              "Icons / ArrowBack",
+              "Title"
+            ],
+            "item-spacing": 32.0,
+            "clip-content": false
+          },
+          {
+            "id": "Icons / ArrowBack",
+            "tap-handler": "$onLeftSideIconClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": "$leftSideIcon"
+          },
+          {
+            "id": "Title",
+            "font-weight": 600.0,
+            "color": "$titleTextColor",
+            "text-content": "$title",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": 18.0,
+            "line-height": 1.25,
+            "typeface": "Inter"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "backgroundColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "leftSideIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    },
+    "onLeftSideIconClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "title": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "titleTextColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "TopBar Base",
+      "size": {
+        "width": 375.0,
+        "height": 56.0
+      },
+      "parameters": {
+        "backgroundColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        },
+        "leftSideIcon": [
+          {
+            "type": "vector",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "type": "vector",
+            "margin": 4.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          }
+        ],
+        "title": "Title",
+        "titleTextColor": {
+          "alpha": 0.8666666666666667,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 0.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

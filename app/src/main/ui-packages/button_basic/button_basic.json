@@ -1,0 +1,236 @@
+{
+  "name": "button_basic",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "qiWqVfhN7MXQRPjz6sgZM8",
+    "node": "33:12142",
+    "version": "5752270796",
+    "component-id": "dbe10341e6adc6fe2ebb2e43883db9aed8a9e103"
+  },
+  "default": "Icon Left=Off",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Label"
+      },
+      {
+        "type": "group",
+        "id": "Cart"
+      }
+    ],
+    "modes": {
+      "Icon Left=Off": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": 16.0,
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Label"
+            ],
+            "item-spacing": 8.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 17.757847533632287,
+              "saturation": 0.9253112033195021,
+              "value": 0.9450980392156862
+            }
+          },
+          {
+            "id": "Label",
+            "font-weight": 500.0,
+            "color": "$textColor",
+            "text-content": "$text",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          }
+        ]
+      },
+      "Icon Left=On": {
+        "rules": [
+          {
+            "id": "top_level",
+            "padding": {
+              "left": 16.0,
+              "top": 14.0,
+              "right": 16.0,
+              "bottom": 14.0
+            },
+            "border-radius": 8.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4980392156862745,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.11764705882352941
+              },
+              "blur": 16.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": -10.0,
+              "blend-mode": "normal"
+            },
+            "tap-handler": "$onClick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "Cart",
+              "Label"
+            ],
+            "item-spacing": 8.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 17.757847533632287,
+              "saturation": 0.9253112033195021,
+              "value": 0.9450980392156862
+            }
+          },
+          {
+            "id": "Cart",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": "$cartIcon",
+            "clip-content": false
+          },
+          {
+            "id": "Label",
+            "font-weight": 500.0,
+            "color": "$textColor",
+            "text-content": "$text",
+            "overflow": "visible",
+            "text-align-vertical": "center",
+            "text-size": 16.0
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "onClick": {
+      "data-type": "void-callback",
+      "required": false,
+      "description": ""
+    },
+    "text": {
+      "data-type": "text",
+      "required": false,
+      "description": ""
+    },
+    "textColor": {
+      "data-type": "color",
+      "required": false,
+      "description": ""
+    },
+    "cartIcon": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "ambients": {
+    "md2.sys.color.surface": {
+      "data-type": "color",
+      "description": null
+    }
+  },
+  "previews": [
+    {
+      "design": "Icon Left=Off",
+      "size": {
+        "width": 71.0,
+        "height": 48.0
+      },
+      "parameters": {
+        "text": "Label",
+        "textColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "design": "Icon Left=On",
+      "size": {
+        "width": 99.0,
+        "height": 48.0
+      },
+      "parameters": {
+        "text": "Label",
+        "textColor": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      },
+      "ambients": {
+        "md2.sys.color.surface": {
+          "alpha": 1.0,
+          "hue": 0.0,
+          "saturation": 0.0,
+          "value": 1.0
+        }
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
